@@ -1,3 +1,5 @@
+package dao;
+
 import com.google.gson.Gson;
 import model.Products;
 import utility.PropertiesLoader;
@@ -25,9 +27,8 @@ public class FakeStoreApi {
     }
 
     public Products getProduct(int id){
-        HttpRequest request = getRequest(prop.getFakeStoreServer() + id);
         try{
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response = client.send(getRequest(prop.getFakeStoreServer() + id), HttpResponse.BodyHandlers.ofString());
             return gson.fromJson(response.body(), Products.class);
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
@@ -36,9 +37,8 @@ public class FakeStoreApi {
     }
 
     public ArrayList<Products> getAllProducts(){
-        HttpRequest request = getRequest(prop.getFakeStoreServer());
         try{
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response = client.send(getRequest(prop.getFakeStoreServer()), HttpResponse.BodyHandlers.ofString());
             Products[] products = gson.fromJson(response.body(), Products[].class);
             return new ArrayList<>(Arrays.asList(products));
         } catch (IOException | InterruptedException e) {
