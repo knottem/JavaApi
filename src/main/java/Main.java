@@ -24,7 +24,6 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-
         System.out.println("Enter a product id: ");
         int id = scan.nextInt();
         Products product1 = api.getProduct(id);
