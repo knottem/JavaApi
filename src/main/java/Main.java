@@ -24,18 +24,17 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        while(true){
-            System.out.println("Enter a product id: ");
-            int id = scan.nextInt();
-            Products product1 = api.getProduct(id);
-            System.out.println(product1);
 
-            System.out.println("Which hour do you want to see the weather for? (0-23)");
-            int hour = scan.nextInt();
-            LocalDateTime time = weather.getHourly().getTime().get(hour);
-            System.out.println(time);
-            System.out.println(weather.getHourly().getTemperature_2m().get(hour) + " degrees Celsius");
-        }
+        System.out.println("Enter a product id: ");
+        int id = scan.nextInt();
+        Products product1 = api.getProduct(id);
+        System.out.println(product1);
+
+        System.out.println("Which hour do you want to see the weather for? (0-23)");
+        int hour = scan.nextInt();
+        LocalDateTime time = weather.getHourly().getTime().get(hour);
+        System.out.println(time);
+        System.out.println(weather.getHourly().getTemperature_2m().get(hour) + " degrees Celsius");
 
 
     }
