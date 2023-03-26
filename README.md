@@ -1,6 +1,6 @@
 # JavaApi
 
-This is a simple Java project that uses the [dao.FakeStoreApi](https://fakestoreapi.com) to get a list of products and the [OpenMeteoApi](https://open-meteo.com) to get the weather.
+This is a simple Java project that uses the [FakeStoreApi](https://fakestoreapi.com) to get a list of products and the [OpenMeteoApi](https://open-meteo.com) to get the weather.
 I just wrote it to get an idea of how to use the [Gson] library.
 
 ## Installation
